@@ -323,4 +323,30 @@ public class Main {
 
     
   }
+  import java.io.*;
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args){
+    Scanner scn = new Scanner(System.in);
+    int n = scn.nextInt();
+    int count =0;
+    //int mask = (n & (~n + 1));
+    while(n!=0){
+        //for(int i =0; i< mask;i++){
+           // int 
+           n ^= (n & (~n)+1);
+           count++;
+    }
+           
+        //}
+   // }
+   System.out.println(count);
+    
+    //write your code here
+  }
+}
+
+
 
