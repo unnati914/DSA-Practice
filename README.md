@@ -478,5 +478,45 @@ public class Main {
     
 	
 }
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static int solution(int n) {
+        //write your code here
+        int ans =0;
+        int count = 0;
+        long m = (long)n;
+        while(m !=1){
+            if(m % 2 ==0){
+                m =m/2;
+                count++;
+            }else{
+               // count++;
+               if(m==3){
+                   count+=2;
+                   m=1;
+               }else{
+                   count++;
+                   if(m % 4==0){
+                       m-=1;
+                   }else{
+                       m+=1;
+                   }
+               }
+            }
+        }
+        return count;
+    }
+    
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int n = scn.nextInt();
+        System.out.println(solution(n));
+    }
+	
+	
+}
 
 
