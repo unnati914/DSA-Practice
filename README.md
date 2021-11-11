@@ -576,5 +576,25 @@ public class Main {
 	
 	
 }
+class Solution {
+    public List<Integer> grayCode(int n) {
+ 	 List<Integer> ans = new ArrayList<>();
+ 	 fun(n, ans);
+ 	 return ans;
+     }
+     
+     public static void fun(int n , List<Integer> ans){
+         if(n==0){
+             ans.add(0);
+             return;
+         }
+         fun(n-1,ans);
+         for(int i = ans.size()-1;i>=0;i--){
+             ans.add(ans.get(i) | (1<<(n-1)));
+         }
+     }
 
+}
+
+        
 
