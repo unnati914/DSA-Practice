@@ -720,3 +720,42 @@ public class Main {
 
         
 
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        ArrayList<String> words = new ArrayList<>();
+        System.out.println(words);
+        
+    }
+    static String[] codes = {"abc","def","ghi","jkl","mno","pqrs","tu","vwx","yz"};
+    public static ArrayList<String> getKPC(String str) {
+        if(str.length() == 0){
+            ArrayList<String> bres = new ArrayList<>();
+            bres.add("");
+            return bres;
+        }
+        
+        char ch = str.charAt(0);//5
+        String ros = str.substring(1); //73
+        
+        ArrayList<String> rres  = getKPS(ros);
+        ArrayList<String> mres = new ArrayList<>();
+        
+        String codeforch = codes[ch];
+        for(int i =0; i<codeforch.length();i++){
+            char charcode = codeforch.charAt(i);
+            
+            for(String rstr:rres){
+                mres.add(chcode + rstr);
+            }
+        }
+        return mres;
+        // null;
+    }
+
+}
