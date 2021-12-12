@@ -1207,4 +1207,22 @@ public class Solution {
         return freq;
     }
 }
+					  class Solution {
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> ans = new ArrayList<>();
+        if(numRows == 0) return ans;
+        List<Integer> row = new ArrayList<>();
+        for(int i = 1;i<= numRows;i++){
+            row.add(1);
+            for(int j = row.size() - 2;j > 0; j--){
+                if(j>(row.size()-2)/2) row.set(j,row.get(j)+row.get(j-1));
+                else row.set(j,row.get(row.size()- j - 1));//just copy the right half answer instead of doing calculation.
+            }
+            ans.add(new ArrayList<Integer>(row));
+        }
+        return ans;
+    }
+        
+    }
+
 	
