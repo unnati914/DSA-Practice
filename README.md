@@ -1179,4 +1179,32 @@ public class Solution {
         return false;
     }
 }
+				      class Solution {
+    public int[] intersect(int[] nums1, int[] nums2) {
+        int[] freq1 = getfre[nums1];
+        int[] freq2 = getfre[nums2];
+        
+        List<Integer> ans = new ArrayList<>();
+        
+        for(int i =0; i< freq1.length;i++){
+            int count = Math.min(freq1[i], freq2[i]);
+            while(count > 0){
+                ans.add(i);
+            }
+        }
+        int[] ans = new int[ans.size()];
+        for(int i = 0; i< ans.size();i++){
+            res[i] = ans.get(i);
+            
+        }
+        return res;
+    }
+    public int[] getfre(int[] nums){
+        int[] nums = new int[1001];
+        for(int ele:nums){
+            freq[ele]++;
+        }
+        return freq;
+    }
+}
 	
